@@ -13,10 +13,7 @@
     "build": "react-scripts build"
   }
 }
-
-}
-
-  },
+ },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -36,5 +33,6 @@
     ]
   }
 }
+
 
 
