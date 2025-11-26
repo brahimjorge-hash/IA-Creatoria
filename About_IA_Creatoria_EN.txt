@@ -1,0 +1,6 @@
+Section “About IA-Creatoria”
+
+Founder: J.B.
+IA-Creatoria is a tool developed to democratize access to artificial intelligence, created with the support of advanced AI technologies to allow anyone —regardless of economic resources— to use it and benefit from it.
+
+Thank you for using IA-Creatoria. We are building the future together.
