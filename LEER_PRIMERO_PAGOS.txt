@@ -1,0 +1,8 @@
+INSTRUCCIONES RÁPIDAS - Mercado Pago (SANDBOX)
+TEST PUBLIC KEY: TEST-1bad970f-613d-4be2-a5d9-118f8116c2c3
+TEST ACCESS TOKEN: TEST-5337053742600908-111411-a9403fcbd8b5188d08a647de8076f385-169836979
+
+1) Este paquete usa claves TEST para pruebas solo.
+2) Para pasar a PRODUCCIÓN: reemplazar MP_PUBLIC_KEY y MP_ACCESS_TOKEN por claves LIVE en las variables de entorno de Render.
+3) Webhook: configurar en Mercado Pago -> Webhooks -> URL = https://<tu-backend-url>/api/mercadopago/webhook
+4) Si usás Firebase, subir serviceAccountKey.json a backend/database o configurar GOOGLE_APPLICATION_CREDENTIALS en Render.

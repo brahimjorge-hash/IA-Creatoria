@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ia-creatoria-api
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node app.js
+    envVars:
+      - key: MP_PUBLIC_KEY
+        value: "TEST-1bad970f-613d-4be2-a5d9-118f8116c2c3"
+      - key: MP_ACCESS_TOKEN
+        value: "TEST-5337053742600908-111411-a9403fcbd8b5188d08a647de8076f385-169836979"
+      - key: NODE_ENV
+        value: "production"
+      - key: PORT
+        value: "5000"

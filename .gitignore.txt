@@ -1,0 +1,7 @@
+*.json
+.env
+node_modules/
+.env
+*.json
+backend/keys/
+serviceAccountKey.json
