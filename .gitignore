@@ -4,3 +4,6 @@ backend/node_modules/
 frontend/node_modules/
 backend/database/serviceAccountKey.json
 .DS_Store
+ia-creatoria-dbed60c801a7.json
+.env
+*.env
