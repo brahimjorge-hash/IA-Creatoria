@@ -1,12 +1,19 @@
-const admin = require("firebase-admin");
-// const serviceAccount = require("./serviceAccountKey.json"); // Descomentar si usas el archivo JSON local
+const admin = require('firebase-admin');
 
-// Configuración si usas GOOGLE_APPLICATION_CREDENTIALS en Render
-admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
-  // Reemplazar por la URL de tu base de datos si usas Realtime Database
-  // databaseURL: "https://<tu-project-id>.firebaseio.com" 
-});
+if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+  try {
+    const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+    admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
+  } catch (err) {
+    console.error('Invalid FIREBASE_SERVICE_ACCOUNT JSON');
+    throw err;
+  }
+} else if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+  admin.initializeApp({ credential: admin.credential.applicationDefault() });
+} else {
+  // Fallback: initialize without explicit credentials (may fail if none provided)
+  admin.initializeApp();
+}
 
 const db = admin.firestore();
 

@@ -1,5 +1,6 @@
 node_modules/
 .env
-*.json
-backend/keys/
-serviceAccountKey.json
+backend/node_modules/
+frontend/node_modules/
+backend/database/serviceAccountKey.json
+.DS_Store

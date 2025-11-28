@@ -1,28 +1,19 @@
-app.get("/test-firestore", async (req, res) => {
-  try {
-    const docRef = db.collection("pruebas").doc();
-    await docRef.set({
-      mensaje: "🔥 Firestore conectado correctamente",
-      fecha: new Date(),
-    });
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
-    res.json({ ok: true, id: docRef.id });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ ok: false, error: error.message });
-  }
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+// Ruta de prueba
+app.get("/health", (req, res) => {
+  res.json({ ok: true });
 });
-app.get("/test-firestore", async (req, res) => {
-  try {
-    const docRef = db.collection("pruebas").doc();
-    await docRef.set({
-      mensaje: "🔥 Firestore conectado correctamente",
-      fecha: new Date(),
-    });
 
-    res.json({ ok: true, id: docRef.id });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ ok: false, error: error.message });
-  }
+// Puerto para Render
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+  console.log("IA Creatoria backend running on port", PORT);
 });
